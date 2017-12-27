@@ -974,6 +974,19 @@ public:
 };
 SWIG_TEMPLATE_TYPEDEF(ePtr<iPlayableService>, iPlayableServicePtr);
 
+SWIG_IGNORE(iUriService);
+class iUriService: public iObject
+ {
+ #ifdef SWIG
+ 	iUriService();
+ 	~iUriService();
+ #endif
+ public:
+ 	virtual SWIG_VOID(RESULT) setResolvedUri(const std::string &resolvedUri, int serviceType)=0;
+ 	virtual SWIG_VOID(RESULT) failedToResolveUri()=0;
+ };
+ SWIG_TEMPLATE_TYPEDEF(ePtr<iUriService>, iUriServicePtr);
+ 
 class iRecordableService_ENUMS
 {
 #ifdef SWIG
